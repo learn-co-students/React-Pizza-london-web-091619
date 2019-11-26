@@ -15,12 +15,22 @@ const Pizza = (props) => {
     setVegetarian(props.pizza.vegetarian)
   }
 
+  const handleEditPizza = () => {
+    const pizza = {
+      "id": props.pizza.id,
+      "topping": topping,
+      "size": size,
+      "vegetarian": vegetarian
+    }
+    props.editPizza(pizza)
+  }
+
   return(
     <tr>
       <td>{topping}</td>
       <td>{size}</td>
       <td>{vegetarian ? "Vegetarian": "Non-vegetarian"}</td>
-      <td><button type="button" className="btn btn-primary">Edit Pizza</button></td>
+      <td><button type="button" className="btn btn-primary" onClick={() => handleEditPizza()}>Edit Pizza</button></td>
     </tr>
   )
 }

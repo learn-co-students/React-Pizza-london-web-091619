@@ -9,7 +9,9 @@ const PizzaList = (props) => {
   
   const renderPizzas = () => {
     return props.pizzas.map(pizza => {
-      return <Pizza pizza={pizza} />
+      return <Pizza
+                pizza={pizza}
+                editPizza={props.editPizza}/>
     })
   }
 
